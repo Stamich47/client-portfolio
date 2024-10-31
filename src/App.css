@@ -116,7 +116,7 @@ p {
   justify-content: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 660px) {
   .about-section {
     flex-direction: column;
     margin: auto 20px;

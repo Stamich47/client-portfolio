@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div id="home" className="about-section">
       <img src={headshot} alt="Briana" className="img" />
-      <div>
+      <div className="content">
         <h2 className="header-style">Hi, I'm Briana.</h2>
         <p>
           I'm a graphic designer with a passion for creating stunning visuals. I
