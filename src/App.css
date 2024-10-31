@@ -55,6 +55,8 @@ p {
 .about-section img {
   max-width: 400px;
   border-radius: 50%;
+  max-height: 80vh;
+  width: auto;
 }
 
 .services-section {
