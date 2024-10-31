@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+body {
+  background-color: #01161e;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body-style,
+p {
+  font-family: "Roboto", sans-serif;
+  color: #598392;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-style {
+  font-family: "Playfair Display", serif;
+  color: #aec3b0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.brand-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.navbar-nav {
+  font-family: "Roboto", sans-serif;
+}
+
+.nav-bg {
+  background-color: #1245598f;
+  transition: background-color 0.5s;
+}
+
+.about-section {
+  height: 100vh;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.btn {
+  background-color: #124559;
+  color: #eff6e0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #598392;
+  transition: 0.3s;
+}
+
+.about-section img {
+  max-width: 400px;
+  border-radius: 50%;
+}
+
+.services-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  margin-top: 40px;
+  border-top: 1px solid #598392;
+}
+
+.services-section li {
+  color: #598392;
+}
+
+.card {
+  background-color: #124559;
+  color: #eff6e0;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px #59839241;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.card-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.contact-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+  margin-top: 40px;
+  border-top: 1px solid #598392;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    margin: auto 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .about-section img {
+    width: 60%;
+    height: auto;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
