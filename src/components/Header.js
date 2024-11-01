@@ -1,8 +1,10 @@
 import brandLogo from "../assets/images/brand_logo.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const [mainPageNav, setMainPageNav] = useState(true);
 
   const handleToggleClick = () => {
     const navbarToggler = document.querySelector(".navbar-toggler");
@@ -12,6 +14,22 @@ export default function Header() {
       setIsNavbarOpen(true);
     } else {
       setIsNavbarOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (window.location.pathname !== "/") {
+      setMainPageNav(false);
+    } else {
+      setMainPageNav(true);
+    }
+  }, []);
+
+  const handleLinkClick = () => {
+    if (window.location.pathname !== "/") {
+      setMainPageNav(false);
+    } else {
+      setMainPageNav(true);
     }
   };
 
@@ -42,30 +60,67 @@ export default function Header() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className={`navbar-nav ms-auto m-2`}>
-              <li className="nav-item">
-                <a className="nav-link  link-style" href="#home">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link  link-style" href="#services">
-                  Services
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link  link-style" href="#Gallery">
-                  Gallery
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link  link-style" href="#blog">
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </div>
+          {mainPageNav ? (
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul
+                className={`navbar-nav ms-auto m-2`}
+                onClick={handleLinkClick}
+              >
+                <li className="nav-item">
+                  <a className="nav-link  link-style" href="#home">
+                    About Me
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link  link-style" href="#services">
+                    Services
+                  </a>
+                </li>
+
+                <li className="nav-item">
+                  <Link to="/gallery" className="nav-link link-style">
+                    Gallery
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link  link-style" href="#blog">
+                    Blog
+                  </a>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul
+                className={`navbar-nav ms-auto m-2`}
+                onClick={handleLinkClick}
+              >
+                <Link to="/" className="nav-link  link-style">
+                  <li className="nav-item">
+                    <a className="nav-link  link-style" href="#home">
+                      Home
+                    </a>
+                  </li>
+                </Link>
+
+                <li className="nav-item">
+                  <Link to="/gallery" className="nav-link  link-style">
+                    <a className="nav-link  link-style" href="#gallery">
+                      Gallery
+                    </a>
+                  </Link>
+                </li>
+
+                <Link to="/blog" className="nav-link  link-style">
+                  <li className="nav-item">
+                    <a className="nav-link  link-style" href="#blog">
+                      Blog
+                    </a>
+                  </li>
+                </Link>
+              </ul>
+            </div>
+          )}
         </div>
       </nav>
     </header>
