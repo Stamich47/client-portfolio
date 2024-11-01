@@ -58,7 +58,7 @@ export default function Header() {
             aria-label="Toggle navigation"
             onClick={handleToggleClick}
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon !important"></span>
           </button>
           {mainPageNav ? (
             <div className="collapse navbar-collapse" id="navbarNav">
@@ -96,27 +96,17 @@ export default function Header() {
                 onClick={handleLinkClick}
               >
                 <Link to="/" className="nav-link  link-style">
-                  <li className="nav-item">
-                    <a className="nav-link  link-style" href="#home">
-                      Home
-                    </a>
-                  </li>
+                  <li className="nav-item">Home</li>
                 </Link>
 
                 <li className="nav-item">
                   <Link to="/gallery" className="nav-link  link-style">
-                    <a className="nav-link  link-style" href="#gallery">
-                      Gallery
-                    </a>
+                    Gallery
                   </Link>
                 </li>
 
                 <Link to="/blog" className="nav-link  link-style">
-                  <li className="nav-item">
-                    <a className="nav-link  link-style" href="#blog">
-                      Blog
-                    </a>
-                  </li>
+                  <li className="nav-item">Blog</li>
                 </Link>
               </ul>
             </div>

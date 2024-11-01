@@ -11,7 +11,7 @@ export default function About() {
 
   return (
     <div id="home" className="about-section">
-      <img src={headshot} alt="Briana" className="img" />s
+      <img src={headshot} alt="Briana" className="img" />
       <div className="content">
         <h2 className="header-style">Hi, I'm Briana.</h2>
         <p>
