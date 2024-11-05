@@ -83,9 +83,9 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link  link-style" href="#blog">
+                  <Link to="/blog" className="nav-link link-style">
                     Blog
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -85,7 +85,7 @@ export default function GalleryPage() {
       <Gallery galleryImages={filteredImages} onImageClick={onImageClick} />
       {modalVisible && (
         <div
-          className="modal d-flex justify-content-center align-items-center"
+          className="modal d-flex justify-content-center align-items-center fade-in"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
         >
           <div className="modal-dialog">
