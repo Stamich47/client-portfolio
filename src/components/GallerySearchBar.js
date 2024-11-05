@@ -13,10 +13,18 @@ export default function GallerySearchBar({ onSort, onFilter, imageSrc }) {
 
   return (
     <div className="gallery-search-bar">
-      <input type="text" placeholder="Search" />
-      <button type="button" className="btn btn-primary">
-        Search
-      </button>
+      <form className="form-inline d-flex gap-3">
+        <input
+          className="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+
       <div className="dropdown">
         <button
           className="btn btn-secondary dropdown-toggle"
@@ -74,39 +82,6 @@ export default function GallerySearchBar({ onSort, onFilter, imageSrc }) {
             </option>
           </li>
         </ul>
-      </div>
-
-      <div className="modal-example">
-        <button
-          type="button"
-          className="btn"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-        >
-          Push for Modal
-        </button>
-
-        <div
-          class="modal fade"
-          id="staticBackdrop"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="staticBackdropLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-              <img src={imageSrc} alt="modal" />
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

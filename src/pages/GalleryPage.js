@@ -6,6 +6,7 @@ export default function GalleryPage() {
   const [galleryImages, setGalleryImages] = useState([]);
   const [filteredImages, setFilteredImages] = useState([]);
   const [imageSrc, setImageSrc] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
 
   const APIKEY = process.env.REACT_APP_IMG_API_KEY;
   const category = "graphic design";
@@ -71,6 +72,7 @@ export default function GalleryPage() {
 
   const onImageClick = (image) => {
     setImageSrc(image.target.src);
+    setModalVisible(true);
   };
 
   return (
@@ -81,6 +83,24 @@ export default function GalleryPage() {
         imageSrc={imageSrc}
       />
       <Gallery galleryImages={filteredImages} onImageClick={onImageClick} />
+      {modalVisible && (
+        <div
+          className="modal d-flex justify-content-center align-items-center"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <button
+                type="button"
+                className="btn-close"
+                aria-label="Close"
+                onClick={() => setModalVisible(false)}
+              ></button>
+              <img src={imageSrc} alt="modal" className="rounded" />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

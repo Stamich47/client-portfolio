@@ -162,28 +162,45 @@ p {
   }
 
   .gallery-card {
-    width: 100px;
-    height: 100px;
+    width: 25%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .gallery-search-bar button {
+    padding: 5px 10px;
+  }
+
+  .gallery-search-bar input {
+    padding: 5px 10px;
+    margin: auto;
+  }
+
+  .modal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
   }
 }
 
 .gallery-search-bar {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 60px;
-  gap: 20px;
+  gap: 16px;
 }
 
 .modal-content {
   background-color: transparent;
-}
-
-.modal-content button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border-radius: 12px;
-  background-color: #1245596e;
 }
 
 .btn-close {
@@ -191,4 +208,9 @@ p {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 12px;
+  background-color: #ffffff;
 }
